@@ -1,4 +1,4 @@
-import { Account, Client, Databases, Functions } from 'appwrite';
+import { Account, Client, Databases, Functions, Teams } from 'appwrite';
 
 // eslint-disable-next-line max-len
 const projectId = import.meta.env.VITE_APPWRITE_PROJECT_ID; // Appwrite Project ID
@@ -15,4 +15,10 @@ client.setEndpoint(endpoint).setProject(projectId).setDevKey(key); // Set the en
 export const account = new Account(client);
 export const databases = new Databases(client);
 export const functions = new Functions(client);
-export { ID } from 'appwrite';
+export const teams = new Teams(client);
+export { ID, OAuthProvider } from 'appwrite';
+
+// account.createOAuth2Session(OAuthProvider.Google);
+
+// const teamsUsers = teams.get('6873fe3e00362805fb89');
+// console.log(teamsUsers);

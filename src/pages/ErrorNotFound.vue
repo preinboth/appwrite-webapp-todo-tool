@@ -25,3 +25,4 @@ defineOptions({
   name: 'ErrorNotFound',
 });
 </script>
+<style lang="sass" scoped></style>
