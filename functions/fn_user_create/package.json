@@ -1,0 +1,22 @@
+{
+  "name": "fn_user_create",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "preinboth <github@preinboth.de>",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "node-appwrite": "^17.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3"
+  }
+}

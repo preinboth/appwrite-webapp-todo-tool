@@ -11,7 +11,8 @@ defineOptions({
 });
 
 const auth = useAuthStore();
-onMounted(() => {
-  auth.fetchUser();
+
+onMounted(async () => {
+  await auth.initializeAuth();
 });
 </script>
