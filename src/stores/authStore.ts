@@ -6,15 +6,34 @@ export const useAuthStore = defineStore('auth', {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     user: null as null | any,
     loading: false,
+    initialized: false,
   }),
 
+  getters: {
+    isLoggedIn(): boolean {
+      return !!this.user;
+    },
+  },
+
   actions: {
-    async fetchUser() {
+    async initializeAuth() {
+      if (this.initialized) return;
+
       this.loading = true;
       try {
-        const user = await account.get();
-        debugger;
-        this.user = user;
+        this.user = await account.get();
+      } catch {
+        this.user = null;
+      } finally {
+        this.loading = false;
+        this.initialized = true;
+      }
+    },
+
+    async refreshAuth() {
+      this.loading = true;
+      try {
+        this.user = await account.get();
       } catch {
         this.user = null;
       } finally {
@@ -23,12 +42,12 @@ export const useAuthStore = defineStore('auth', {
     },
 
     async logout() {
-      await account.deleteSession('current');
+      try {
+        await account.deleteSession('current');
+      } catch (error) {
+        console.error('Logout error:', error);
+      }
       this.user = null;
-    },
-
-    isLoggedIn(): boolean {
-      return !!this.user;
     },
   },
 });

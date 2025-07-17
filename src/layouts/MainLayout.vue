@@ -40,7 +40,7 @@ import { ref } from 'vue';
 import { useQuasar } from 'quasar';
 import EssentialLink, {
   EssentialLinkProps,
-} from 'components/EssentialLink.vue';
+} from '@components/EssentialLink.vue';
 
 defineOptions({
   name: 'MainLayout',

@@ -1,0 +1,36 @@
+{
+  "name": "fn_databases",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "preinboth <github@preinboth.de>",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts,.vue ./",
+    "lint:fix": "eslint --ext .js,.ts,.vue ./ --fix",
+    "prettier:fix": "npx prettier --write .js,.ts,.vue ./src",
+    "test": "echo \"No test specified\" && exit 0",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "node-appwrite": "^17.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.1",
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": "^20 || ^18 || ^16",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}

@@ -37,8 +37,10 @@ async function handleGoogleLogin() {
   try {
     const successURL =
       window.location.origin + router.resolve({ name: 'OAuthSuccess' }).href;
+    console.log('Success URL:', successURL);
     const failureURL =
       window.location.origin + router.resolve({ name: 'OAuthFailure' }).href;
+    console.log('Failure URL:', failureURL);
 
     await account.createOAuth2Session(
       OAuthProvider.Google, // provider
